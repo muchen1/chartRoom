@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="author" content="Daipeng">
+    <meta name="description" content="a simple chat application built with node.js and websocket">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>在线聊天</title>
+        <link rel="stylesheet" href="style/main.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+	
+</head>
+<body>
+	<div class="wrapper">
+            <div class="banner">
+                <h1>畅聊吧</h1>
+                <span id="status"></span>
+            </div>
+            <div id="historyMsg">
+            </div>
+            <div class="controls" >
+                <div class="items">
+                    <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+                    <input id="emoji" type="button" value="表情" title="emoji" />
+                    <label for="sendImage" class="imageLable">
+                        <input type="button" value="插入图像"  />
+                        <input id="sendImage" type="file" value="选择图片"/>
+                    </label>
+                    <input id="clearBtn" type="button" value="清除聊天记录" title="clear screen" />
+                </div>
+                <textarea id="messageInput" placeHolder="enter to send"></textarea>
+                <input id="sendBtn" type="button" value="发送">
+                <div id="emojiWrapper">
+                </div>
+            </div>
+        </div>
+        <div class="onLineUsers">
+            <div class="header">在线用户</div>
+            <ul class="users">
+                
+            </ul>
+        </div>
+        <div id="loginWrapper">
+            <p id="info">正在连接服务器...</p>
+            <div id="nickWrapper">
+                <input type="text" placeHolder="nickname" id="nicknameInput" />
+                <input type="button" value="确定" id="loginBtn" />
+            </div>
+        </div>
+        <script src="script/socket.io.js"></script>
+        <script src="script/jquery-1.8.3.min.js"></script>
+        <script src="script/highchat.js"></script>
+</body>
+</html>
